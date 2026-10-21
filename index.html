@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محمد حسن بديني - لرحلات الحج والعمرة</title>
+    
+    <!-- خطوط جوجل (Tajawal) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* الألوان والمتغيرات الرئيسية */
+        :root {
+            --primary-color: #0d5c3a;
+            --primary-dark: #073b24;
+            --gold-color: #c5a059;
+            --gold-light: #e6ca85;
+            --dark-color: #1a2520;
+            --light-color: #f8f9fa;
+            --white-color: #ffffff;
+            --gray-color: #6c757d;
+            --border-color: #e2e8f0;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        /* التنسيقات العامة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #fafbfc;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* الأزرار */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold-color), #a8823b);
+            color: var(--white-color) !important;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #a8823b, var(--gold-color));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: var(--primary-color);
+            color: var(--white-color) !important;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--gold-color);
+            color: var(--gold-color) !important;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--gold-color);
+            color: var(--white-color) !important;
+        }
+
+        .btn-lg {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: var(--primary-color);
+            margin-top: 5px;
+        }
+
+        .sub-title {
+            color: var(--gold-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+        }
+
+        /* الهيدر وقائمة التنقل */
+        .header {
+            background-color: var(--white-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .logo i {
+            color: var(--gold-color);
+            font-size: 1.8rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--gold-color);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        /* القسم الرئيسي (Hero) - خلفية إسلامية زمردية فاخرة */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #073b24 0%, #0d5c3a 50%, #12402a 100%);
+            color: #ffffff !important;
+            padding: 100px 0 120px;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 850px;
+        }
+
+        .badge {
+            background-color: rgba(197, 160, 89, 0.25);
+            border: 1px solid var(--gold-color);
+            color: var(--gold-light);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            font-weight: 800;
+            color: #ffffff !important;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            color: #e2e8f0 !important;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .stat-item i {
+            font-size: 2.2rem;
+            color: var(--gold-color);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+        }
+
+        /* قسم عن المؤسسة والمالك */
+        .about {
+            padding: 90px 0;
+            background-color: var(--white-color);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 4px solid var(--gold-color);
+        }
+
+        .about-image-card img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .owner-badge {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(7, 59, 36, 0.95));
+            color: var(--white-color);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .owner-badge h4 {
+            font-size: 1.4rem;
+            color: var(--gold-light);
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin: 10px 0 20px;
+        }
+
+        .features-list {
+            margin: 25px 0 35px;
+        }
+
+        .features-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+
+        .features-list i {
+            color: var(--gold-color);
+            background-color: rgba(197, 160, 89, 0.1);
+            padding: 6px;
+            border-radius: 50%;
+        }
+
+        /* أزرار التصفية */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn, .filter-btn-hotel {
+            padding: 10px 20px;
+            border: 1px solid var(--border-color);
+            background-color: var(--white-color);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--gray-color);
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn-hotel.active,
+        .filter-btn:hover, .filter-btn-hotel:hover {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border-color: var(--primary-color);
+        }
+
+        /* قسم الرحلات والبرامج */
+        .packages {
+            padding: 90px 0;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .package-card {
+            background-color: var(--white-color);
+            border-radius: 16px;
+            padding: 35px 25px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .package-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold-color);
+        }
+
+        .package-card.featured {
+            border: 2px solid var(--gold-color);
+        }
+
+        .package-card.vip-card {
+            background: linear-gradient(145deg, #122119, #073b24);
+            color: var(--white-color);
+        }
+
+        .package-card.vip-card .package-header h3 {
+            color: var(--gold-light);
+        }
+
+        .package-tag {
+            position: absolute;
+            top: -15px;
+            right: 25px;
+            background-color: var(--gold-color);
+            color: var(--white-color);
+            padding: 4px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .package-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .package-header h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .package-features {
+            margin-bottom: 30px;
+        }
+
+        .package-features li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+
+        .package-features i {
+            color: var(--gold-color);
+            width: 20px;
+        }
+
+        /* قسم الفنادق */
+        .hotels {
+            padding: 90px 0;
+            background-color: var(--white-color);
+        }
+
+        .hotels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .hotel-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background-color: var(--white-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .hotel-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .hotel-info {
+            padding: 20px;
+        }
+
+        .hotel-city {
+            color: var(--gold-color);
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .hotel-info h3 {
+            color: var(--primary-color);
+            margin: 5px 0 8px;
+        }
+
+        .hotel-stars {
+            color: #ffc107;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .hotel-desc {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        /* قسم الأسئلة الشائعة Accordion */
+        .faq {
+            padding: 90px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--white-color);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            display: none;
+            color: var(--gray-color);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* قسم التواصل والتسجيل */
+        .contact {
+            padding: 90px 0;
+            background-color: var(--white-color);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .info-items {
+            margin-top: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--gold-color);
+            background-color: rgba(197, 160, 89, 0.1);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .contact-form-wrapper {
+            background-color: var(--light-color);
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form-wrapper h3 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--gold-color);
+        }
+
+        /* الفوتر */
+        .footer {
+            background-color: var(--dark-color);
+            color: var(--white-color);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-logo p {
+            margin-top: 15px;
+            opacity: 0.7;
+            font-size: 0.95rem;
+        }
+
+        .footer-links h4, .footer-social h4 {
+            color: var(--gold-color);
+            margin-bottom: 20px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-color);
+            opacity: 1;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--gold-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        /* زر واتساب العائم */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: #25d366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 992px) {
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                background-color: var(--white-color);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+                display: none;
+            }
+
+            .nav-menu.open {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الترويسة وقائمة التنقل -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-kaaba"></i>
+                <span>محمد حسن بديني</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">الرئيسية</a>
+                <a href="#about" class="nav-link">عن المؤسسة</a>
+                <a href="#packages" class="nav-link">برامج الرحلات</a>
+                <a href="#hotels" class="nav-link">فنادقنا</a>
+                <a href="#faq" class="nav-link">الأسئلة الشائعة</a>
+                <a href="#contact" class="nav-link">تواصل معنا</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="https://wa.me/201008811199?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20رحلات%20الحج%20والعمرة" target="_blank" class="btn btn-primary">
+                    <i class="fa-brands fa-whatsapp"></i> حجز سريع
+                </a>
+                <button class="mobile-toggle" id="mobile-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <span class="badge">خدمة ضيوف الرحمن شرف لنا</span>
+            <h1>مؤسسة محمد حسن بديني<br>لرحلات الحج والعمرة</h1>
+            <p>نرافقكم بكل أمانة وراحة في رحلتكم الإيمانية إلى الديار المقدسة، تقديم أفضل الخدمات وأرقى الفنادق وأيسر التنقلات.</p>
+            <div class="hero-btns">
+                <a href="#packages" class="btn btn-primary btn-lg">استعرض الرحلات والعروض</a>
+                <a href="https://wa.me/201008811199?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20العروض%20المتاحة" target="_blank" class="btn btn-outline btn-lg">تواصل مباشر واتساب</a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <i class="fa-solid fa-users"></i>
+                    <div>
+                        <span class="stat-number">+15,000</span>
+                        <span class="stat-label">معتمر وحاج</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-award"></i>
+                    <div>
+                        <span class="stat-number">+12</span>
+                        <span class="stat-label">عقود من الخبرة</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-hotel"></i>
+                    <div>
+                        <span class="stat-number">+50</span>
+                        <span class="stat-label">فندق شريك</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم عن المؤسسة والمالك -->
+    <section class="about" id="about">
+        <div class="container about-grid">
+            <div class="about-image-wrapper">
+                <div class="about-image-card">
+                    <!-- الصورة الخاصة بالمالك الأستاذ محمد حسن بديني -->
+                    <img src="./owner.jpg.jpeg" alt="محمد حسن بديني">
+                    <div class="owner-badge">
+                        <h4>أ. محمد حسن بديني</h4>
+                        <p>المدير العام والمؤسس</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-text">
+                <span class="sub-title">من نحن</span>
+                <h2>خبرة وأمانة في تنظيم رحلات الحج والعمرة</h2>
+                <p>نعمل بتفانٍ تحت إدارة الأستاذ <strong>محمد حسن بديني</strong> لتقديم أفضل برامج الحج والعمرة المتكاملة. نضع بين أيديكم خبرتنا الطويلة لضمان رحلة إيمانية خالية من المتاعب وبأعلى درجات الراحة والاطمئنان.</p>
+                
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> إشراف مباشر ودقيق على كافة خطوات الرحلة</li>
+                    <li><i class="fa-solid fa-check"></i> تنظيم مواعيد الرحلات والتنقلات بأحدث الحافلات المكيفة</li>
+                    <li><i class="fa-solid fa-check"></i> توفير أرقى الفنادق القريبة من الحرم المكي والنبوي</li>
+                    <li><i class="fa-solid fa-check"></i> مرشدون دينيو متمرسون لمرافقة الأفواج</li>
+                </ul>
+                
+                <a href="https://wa.me/201008811199?text=السلام%20عليكم،%20أرغب%20في%20استشارة%20مجانية%20بخصوص%20رحلات%20الحج%20والعمرة" target="_blank" class="btn btn-secondary">استشارة مجانية عبر الواتساب</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم برامج الرحلات الـ 5 -->
+    <section class="packages" id="packages">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-title">برامج مميزة</span>
+                <h2>عروض ورحلات الحج والعمرة</h2>
+                <p>اختر المستوى الذي يناسب تطلعاتك وميزانيتك من بين باقاتنا المتنوعة</p>
+            </div>
+
+            <!-- أزرار التصفية -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">جميع البرامج</button>
+                <button class="filter-btn" data-filter="economic">اقتصادي</button>
+                <button class="filter-btn" data-filter="eco-plus">اقتصادي متميز</button>
+                <button class="filter-btn" data-filter="stars4">4 نجوم</button>
+                <button class="filter-btn" data-filter="stars5">5 نجوم</button>
+                <button class="filter-btn" data-filter="vip">VIP كبار الشخصيات</button>
+            </div>
+
+            <div class="packages-grid">
+                <!-- 1. اقتصادي -->
+                <div class="package-card" data-category="economic">
+                    <div class="package-tag">اقتصادي</div>
+                    <div class="package-header">
+                        <h3>العمرة الاقتصادية</h3>
+                        <p class="price">برنامج ميسر بأفضل أسعار</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fa-solid fa-hotel"></i> فنادق 3 نجوم ممتازة</li>
+                        <li><i class="fa-solid fa-bus"></i> مواصلات حديثة من وإلى الحرم</li>
+                        <li><i class="fa-solid fa-passport"></i> استخراج التأشيرة وتذاكر الطيران</li>
+                        <li><i class="fa-solid fa-user-tie"></i> مشرف دينى ومرافق للرحلة</li>
+                    </ul>
+                    <a href="https://wa.me/201008811199?text=السلام%20عليكم،%20أستفسر%20عن%20تفاصيل%20برنامج%20العمرة%20الاقتصادية" target="_blank" class="btn btn-outline full-width">حجز وتفاصيل عبر الواتساب</a>
+                </div>
+
+                <!-- 2. اقتصادي متميز -->
+                <div class="package-card featured" data-category="eco-plus">
+                    <div class="package-tag">اقتصادي متميز</div>
+                    <div class="package-header">
+                        <h3>العمرة الاقتصادية المتميزة</h3>
+                        <p class="price">توازن مثالي بين السعر والراحة</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fa-solid fa-hotel"></i> فنادق 3-4 نجوم قريبة جداً (مشياً)</li>
+                        <li><i class="fa-solid fa-plane"></i> طيران مباشر</li>
+                        <li><i class="fa-solid fa-utensils"></i> وجبة إفطار يومية</li>
+                        <li><i class="fa-solid fa-map-location-dot"></i> زيارة المزارات بمكة والمدينة</li>
+                    </ul>
+                    <a href="https://wa.me/201008811199?text=السلام%20عليكم،%20أستفسر%20عن%20تفاصيل%20برنامج%20العمرة%20الاقتصادية%20المتميزة" target="_blank" class="btn btn-primary full-width">حجز وتفاصيل عبر الواتساب</a>
+                </div>
+
+                <!-- 3. 4 نجوم -->
+                <div class="package-card" data-category="stars4">
+                    <div class="package-tag">4 نجوم</div>
+                    <div class="package-header">
+                        <h3>رحلة 4 نجوم الذهبية</h3>
+                        <p class="price">إقامة راقية وقرب متميز</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fa-solid fa-hotel"></i> فنادق 4 نجوم مطلة أو قريبة جداً</li>
+                        <li><i class="fa-solid fa-utensils"></i> بوفيه إفطار مفتوح</li>
+                        <li><i class="fa-solid fa-bus"></i> تنقلات خاصة بين المدن</li>
+                        <li><i class="fa-solid fa-gift"></i> هدايا وحقائب سفر لكل معتمر</li>
+                    </ul>
+                    <a href="https://wa.me/201008811199?text=السلام%20عليكم،%20أستفسر%20عن%20تفاصيل%20رحلة%204%20نجوم%20الذهبية" target="_blank" class="btn btn-outline full-width">حجز وتفاصيل عبر الواتساب</a>
+                </div>
+
+                <!-- 4. 5 نجوم -->
+                <div class="package-card" data-category="stars5">
+                    <div class="package-tag">5 نجوم</div>
+                    <div class="package-header">
+                        <h3>رحلة 5 نجوم الفاخرة</h3>
+                        <p class="price">إقامة أمام الحرم مباشرة</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fa-solid fa-hotel"></i> فنادق صف أول على الحرم المكي والنبوي</li>
+                        <li><i class="fa-solid fa-utensils"></i> إفطار وعشاء بوفيه فاخر</li>
+                        <li><i class="fa-solid fa-plane"></i> أفضل شركات الطيران وحجز مريح</li>
+                        <li><i class="fa-solid fa-clock-rotate-left"></i> خدمة على مدار 24 ساعة</li>
+                    </ul>
+                    <a href="https://wa.me/201008811199?text=السلام%20عليكم،%20أستفسر%20عن%20تفاصيل%20رحلة%205%20نجوم%20الفاخرة" target="_blank" class="btn btn-outline full-width">حجز وتفاصيل عبر الواتساب</a>
+                </div>
+
+                <!-- 5. VIP -->
+                <div class="package-card vip-card" data-category="vip">
+                    <div class="package-tag">VIP</div>
+                    <div class="package-header">
+                        <h3>رحلة VIP كبار الشخصيات</h3>
+                        <p class="price">تجربة استثنائية من الرفاهية والخصوصية</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fa-solid fa-crown"></i> أجنحة فاخرة مطلة مباشرة على الكعبة والروضة</li>
+                        <li><i class="fa-solid fa-car"></i> سيارات خاصة أحدث موديل للتنقلات</li>
+                        <li><i class="fa-solid fa-plane-departure"></i> طيران درجة أولى / رجل أعمال</li>
+                        <li><i class="fa-solid fa-concierge-bell"></i> مرشد خاص ورعاية VIP شاملة</li>
+                    </ul>
+                    <a href="https://wa.me/201008811199?text=السلام%20عليكم،%20أستفسر%20عن%20تفاصيل%20برنامج%20VIP%20لكبار%20الشخصيات" target="_blank" class="btn btn-primary full-width">حجز برنامج VIP عبر الواتساب</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الفنادق الشريكة -->
+    <section class="hotels" id="hotels">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-title">إقامات متميزة ومتنوعة</span>
+                <h2>فنادقنا في مكة المكرمة والمدينة المنورة</h2>
+                <p>خيارات متكاملة تناسب جميع الفئات من الإقامة الاقتصادية وحتى الفاخرة</p>
+            </div>
+
+            <!-- أزرار التصفية -->
+            <div class="filter-buttons">
+                <button class="filter-btn-hotel active" data-city="all">جميع الفنادق</button>
+                <button class="filter-btn-hotel" data-city="makkah-eco">مكة - اقتصادية (1-3 نجوم)</button>
+                <button class="filter-btn-hotel" data-city="makkah-ajyad">مكة - منطقة أجياد (1-5 نجوم)</button>
+                <button class="filter-btn-hotel" data-city="makkah-khalil">مكة - شارع إبراهيم الخليل (4-5 نجوم & VIP)</button>
+                <button class="filter-btn-hotel" data-city="madinah">المدينة المنورة (المنطقة المركزية)</button>
+            </div>
+
+            <div class="hotels-grid">
+                
+                <!-- 1. فنادق مكة الاقتصادية (1 إلى 3 نجوم) -->
+                <div class="hotel-card" data-city="makkah-eco">
+                    <img src="makkah-hotels.jpg.jpeg" alt="مناسك البيت">
+                    <div class="hotel-info">
+                        <span class="hotel-city">مكة المكرمة - اقتصادية</span>
+                        <h3>فندق مناسك البيت</h3>
+                        <p class="hotel-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> (من نجمة إلى 3 نجوم)</p>
+                        <p class="hotel-desc">إقامة ميسرة ومريحة لضيوف الرحمن بأسعار اقتصادية.</p>
+                    </div>
+                </div>
+
+                <div class="hotel-card" data-city="makkah-eco">
+                    <img src="makkah-hotels.jpg.jpeg" alt="كبير الفضيلة">
+                    <div class="hotel-info">
+                        <span class="hotel-city">مكة المكرمة - اقتصادية</span>
+                        <h3>فندق عبير الفضيلة وباقي فنادق منطقه المسفله </h3>
+                        <p class="hotel-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> (من نجمة إلى 3 نجوم)</p>
+                        <p class="hotel-desc">خدمة ممتازة وتسهيلات انتقال ميسرة للحرم المكي.</p>
+                    </div>
+                </div>
+
+                <div class="hotel-card" data-city="makkah-eco">
+                    <img src="makkah-hotels.jpg.jpeg" alt="مجموعة فنادق ميسان">
+                    <div class="hotel-info">
+                        <span class="hotel-city">مكة المكرمة - اقتصادية</span>
+                        <h3>سلسلة فنادق ميسان (الفضي / الذهبي / الماس)</h3>
+                        <p class="hotel-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> (من نجمة إلى 3 نجوم)</p>
+                        <p class="hotel-desc">تضم فندق ميسان الفضي، ميسان الذهبي، وميسان الماس بخدمات راقية.</p>
+                    </div>
+                </div>
+
+                <div class="hotel-card" data-city="makkah-eco">
+                    <img src="makkah-hotels.jpg.jpeg" alt="أبراج الكوسة ونوازي">
+                    <div class="hotel-info">
+                        <span class="hotel-city">مكة المكرمة - اقتصادية</span>
+                        <h3>أبراج الكسوة وأبراج نوازي</h3>
+                        <p class="hotel-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> (من نجمة إلى 3 نجوم)</p>
+                        <p class="hotel-desc">أبراج فندقية مجهزة بالكامل لاستقبال أفواج الحج والعمرة.</p>
+                    </div>
+                </div>
+
+                <div class="hotel-card" data-city="makkah-eco">
+                    <img src="makkah-hotels.jpg.jpeg" alt="قصر العليان ونسمات الخير">
+                    <div class="hotel-info">
+                        <span class="hotel-city">مكة المكرمة - اقتصادية</span>
+                        <h3>قصر العليان ونسمات الخير وبرج الخير</h3>
+                        <p class="hotel-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> (من نجمة إلى 3 نجوم)</p>
+                        <p class="hotel-desc">خيارات إقامة متميزة وهادئة تلائم الرحلات الاقتصادية المتميزة.</p>
+                    </div>
+                </div>
+
+                <div class="hotel-card" data-city="makkah-eco">
+                    <img src="makkah-hotels.jpg.jpeg" alt="صفوة البيت 1 و 2 ومحبس الجن">
+                    <div class="hotel-info">
+                        <span class="hotel-city">مكة المكرمة - اقتصادية</span>
+                        <h3>صفوة البيت (1 و 2) ومجموعات محبس الجن</h3>
+                        <p class="hotel-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> (من نجمة إلى 3 نجوم)</p>
+                        <p class="hotel-desc">فنادق متميزة في منطقة محبس الجن الحيوية مع حافلات لنقل المعتمرين.</p>
+                    </div>
+                </div>
+
+
+                <!-- 2. مجموعة فنادق منطقة أجياد (من نجمة إلى 5 نجوم) -->
+                <div class="hotel-card" data-city="makkah-ajyad">
+                    <img src="makkah-hotels.jpg.jpeg" alt="فنادق منطقة أجياد">
+                    <div class="hotel-info">
+                        <span class="hotel-city">مكة المكرمة - منطقة أجياد</span>
+                        <h3>مجموعة فنادق منطقة أجياد</h3>
+                        <p class="hotel-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> (من نجمة إلى 5 نجوم)</p>
+                        <p class="hotel-desc">تعد منطقة أجياد القريبة جداً من ساحات الحرم الخيار المفصل لراحة ضيوف الرحمن بمختلف الفئات.</p>
+                    </div>
+                </div>
+
+
+                <!-- 3. فنادق شارع إبراهيم الخليل (من 4 إلى 5 نجوم و VIP) -->
+                <div class="hotel-card" data-city="makkah-khalil">
+                    <img src="makkah-hotels.jpg.jpeg" alt="فنادق شارع إبراهيم الخليل">
+                    <div class="hotel-info">
+                        <span class="hotel-city">مكة المكرمة - شارع إبراهيم الخليل</span>
+                        <h3>فنادق شارع إبراهيم الخليل الفاخرة</h3>
+                        <p class="hotel-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> (من 4 إلى 5 نجوم & VIP)</p>
+                        <p class="hotel-desc">أفخم الفنادق الصف الأول المطلة والقريبة جداً من صحن الطواف بالخدمات الراقية.</p>
+                    </div>
+                </div>
+
+
+                <!-- 4. فنادق المدينة المنورة (المنطقة المركزية الشاملة) -->
+                <div class="hotel-card" data-city="madinah">
+                    <img src="madinah-hotels.jpg.jpeg" alt="المنطقة المركزية الشمالية">
+                    <div class="hotel-info">
+                        <span class="hotel-city">المدينة المنورة - المركزية الشمالية</span>
+                        <h3>فنادق المنطقة المركزية الشمالية</h3>
+                        <p class="hotel-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> (من نجمة إلى 5 نجوم)</p>
+                        <p class="hotel-desc">موقع مميز جداً بالقرب من بوابة مصلى النساء بالمسجد النبوي الشريف.</p>
+                    </div>
+                </div>
+
+                <div class="hotel-card" data-city="madinah">
+                    <img src="madinah-hotels.jpg.jpeg" alt="المنطقة المركزية الغربية">
+                    <div class="hotel-info">
+                        <span class="hotel-city">المدينة المنورة - المركزية الغربية</span>
+                        <h3>فنادق المنطقة المركزية الغربية</h3>
+                        <p class="hotel-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> (من نجمة إلى 5 نجوم)</p>
+                        <p class="hotel-desc">سهولة الوصول لساحات الحرم النبوي مع أرقى خدمات الضيافة والراحة.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التواصل والتسجيل -->
+    <section class="contact" id="contact">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <span class="sub-title">تواصل معنا</span>
+                <h2>يسعدنا استقبال استفساراتكم وحجوزاتكم</h2>
+                <p>يمكنكم التواصل معنا مباشرة أو زيارة مقر المؤسسة للحصول على تفاصيل البرامج المتاحة.</p>
+
+                <div class="info-items">
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>العنوان</h4>
+                            <p>المملكة العربية السعودية / جمهورية مصر العربية</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>الواتساب / الهاتف</h4>
+                            <p><a href="https://wa.me/201008811199?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار" target="_blank">+20 100 881 1199</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h4>البريد الإلكتروني</h4>
+                            <p>mohamedbadeny601@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-brands fa-facebook"></i>
+                        <div>
+                            <h4>صفحتنا على فيسبوك</h4>
+                            <p><a href="https://www.facebook.com/share/19mmB4ZfTj/" target="_blank">مؤسسة محمد حسن بديني</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <h3>أرسل طلب استفسار مباشر للواتساب</h3>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="الاسم بالكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="رقم الهاتف / الواتساب" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="" disabled selected>اختر نوع الرحلة المطلوبة</option>
+                            <option value="economic">رحلة اقتصادية</option>
+                            <option value="eco-plus">اقتصادي متميز</option>
+                            <option value="stars4">رحلة 4 نجوم</option>
+                            <option value="stars5">رحلة 5 نجوم</option>
+                            <option value="vip">برنامج VIP</option>
+                            <option value="hajj">رحلة حج</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="4" placeholder="أي تفاصيل أو ملاحظات إضافية"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">
+                        <i class="fa-brands fa-whatsapp"></i> إرسال الاستفسار للواتساب
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-kaaba"></i>
+                    <span>محمد حسن بديني</span>
+                </a>
+                <p>مؤسسة متخصصة في تنظيم وإدارة رحلات الحج والعمرة بأعلى مستويات الجودة والأمانة.</p>
+            </div>
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">عن المؤسسة</a></li>
+                    <li><a href="#packages">البرامج والعروض</a></li>
+                    <li><a href="#hotels">الفنادق</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>تابعونا وتواصلوا معنا</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/19mmB4ZfTj/" target="_blank" title="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.me/201008811199?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار" target="_blank" title="واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة &copy; 2026 لمؤسسة محمد حسن بديني لرحلات الحج والعمرة</p>
+        </div>
+    </footer>
+
+    <!-- زر واتساب عائم -->
+    <a href="https://wa.me/201008811199?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20رحلات%20الحج%20والعمرة" class="whatsapp-float" target="_blank" title="تواصل عبر الواتساب">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- البرمجة التفاعلية -->
+    <script>
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const packageCards = document.querySelectorAll('.package-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                packageCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        const hotelBtns = document.querySelectorAll('.filter-btn-hotel');
+        const hotelCards = document.querySelectorAll('.hotel-card');
+
+        hotelBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                hotelBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const city = btn.getAttribute('data-city');
+
+                hotelCards.forEach(card => {
+                    if (city === 'all' || card.getAttribute('data-city') === city) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const inputs = this.querySelectorAll('input, select, textarea');
+            const name = inputs[0].value;
+            const phone = inputs[1].value;
+            const tripType = inputs[2].options[inputs[2].selectedIndex].text;
+            const notes = inputs[3].value;
+
+            const message = `السلام عليكم، أرغب في الاستفسار والحجز:%0A- الاسم: ${name}%0A- الهاتف: ${phone}%0A- نوع البرنامج: ${tripType}%0A- ملاحظات: ${notes}`;
+            window.open(`https://wa.me/201008811199?text=${message}`, '_blank');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
